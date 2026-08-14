@@ -140,7 +140,66 @@
     box-shadow:0 8px 20px -8px rgba(59,52,112,.6);
   }
   .support-btn:hover{opacity:.9;}
+  .watch-btn{
+  position:fixed;
+  bottom:70px;
+  left:20px;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:var(--indigo);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:.85rem;
+  font-weight:600;
+  box-shadow:0 8px 20px -8px rgba(59,52,112,.6);
+  cursor:pointer;
+  }
   @media (prefers-reduced-motion:reduce){.item-card{animation:none; opacity:1; transform:none;}}
+/* دکمه شناور از کجا ببینم */
+.watch-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* منوی بازشونده */
+.watch-menu {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: #1e1e2f;
+  padding: 10px;
+  border-radius: 12px;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.watch-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.watch-menu a:hover {
+  background: #8b5cf6;
+}
 </style>
 </head>
 <body>
@@ -242,10 +301,19 @@
 </footer>
 
 <a class="support-btn" href="https://t.me/astrofilm_bot" target="_blank" rel="noopener">💬 پشتیبانی</a>
+<button class="watch-btn" onclick="toggleWatchMenu()">🎬 از کجا ببینم؟</button>
 
+<div class="watch-menu" id="watchMenu">
+  <a href="http://donyayeserial.com" target="_blank" rel="noopener">🎬 دنیای سریال</a>
+  <a href="https://www.myf2m.info/" target="_blank" rel="noopener">🎬 MyF2M</a>
+</div>
 <script>
+  function toggleWatchMenu(){
+  const menu = document.getElementById("watchMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
 /* ---------- hero carousel ---------- */
-function initHero(){
+  function initHero(){
   const slides=[...document.querySelectorAll('.hero-slide')];
   slides.forEach(s=>{s.style.background=s.dataset.bg; s.style.backgroundSize='cover';});
   const dotsWrap=document.getElementById('heroDots');
