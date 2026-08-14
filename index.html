@@ -158,21 +158,37 @@
   cursor:pointer;
   }
   @media (prefers-reduced-motion:reduce){.item-card{animation:none; opacity:1; transform:none;}}
-/* دکمه از کجا ببینم */
+/* دکمه های شناور */
+.support-btn,
 .watch-btn {
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  background: #8b5cf6;
-  color: white;
+  width: 110px;
+  height: 36px;
+  padding: 0;
   border: none;
-  padding: 8px 14px;
   border-radius: 20px;
+  color: white;
   font-family: inherit;
   font-size: 13px;
   cursor: pointer;
   z-index: 9999;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* پشتیبانی - بالا */
+.support-btn {
+  bottom: 65px;
+  background: #8b5cf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* از کجا ببینم - زیر پشتیبانی */
+.watch-btn {
+  bottom: 20px;
+  background: #8b5cf6;
 }
 
 /* منوی بازشونده */
@@ -184,7 +200,7 @@
   background: #1e1e2f;
   padding: 8px;
   border-radius: 12px;
-  z-index: 9999;
+  z-index: 10000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
@@ -200,7 +216,7 @@
 
 .watch-menu a:hover {
   background: #8b5cf6;
-  }
+}
 </style>
 </head>
 <body>
