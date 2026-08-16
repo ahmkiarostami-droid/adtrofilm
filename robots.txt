@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ahmkiarostami-droid.github.io/adtrofilm/sitemap.xml
